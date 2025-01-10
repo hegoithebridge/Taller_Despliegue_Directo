@@ -104,6 +104,7 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
 </body>
 </html>
     '''
+    return pag_html_bienvewnida
 # Enruta la funcion al endpoint /api/v1/predict
 @app.route('/api/v1/predict', methods=['GET'])
 def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
