@@ -15,8 +15,95 @@ app.config['DEBUG'] = True
 # Enruta la landing page (endpoint /)
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    return "Bienvenido a mi genial API del modelo de advertising que invente yo cuando tenia 5 años"
-
+    #return "Bienvenido a mi genial API del modelo de advertising que invente yo cuando tenia 5 años"
+    pag_html_bienvewnida = '''
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Prediction Model</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .cta button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .cta button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Revenue Prediction Model</h1>
+    </header>
+    <main>
+        <h2>Overview</h2>
+        <p>
+            This platform uses state-of-the-art predictive modeling techniques to estimate your revenue based on your marketing investments. 
+        </p>
+        <h2>How it works</h2>
+        <ol>
+            <li>Input your marketing investment data.</li>
+            <li>Run the model to generate predictions.</li>
+            <li>Receive detailed insights to optimize your strategy.</li>
+        </ol>
+        <h2>Get Started</h2>
+        <p>
+            Click the button below to start exploring the possibilities and unlock the potential of your data.
+        </p>
+        <div class="cta">
+            <button onclick="window.location.href='prediction_page.html'">Start Now</button>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Revenue Prediction Platform. All Rights Reserved.
+    </footer>
+</body>
+</html>
+    '''
 # Enruta la funcion al endpoint /api/v1/predict
 @app.route('/api/v1/predict', methods=['GET'])
 def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
